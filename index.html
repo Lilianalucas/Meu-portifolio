@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="particulas"></div>   
+
+ 
+
+   <nav class="navegacao">
+      <ul class="menu">
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="#contatos" class="menu-link">Contato</a></li>
+      </ul>
+   </nav>
+
+    <main id="inicio" class="cabecalho">
+            <img src="imagens/minha-foto03.jpg" alt="Foto de perfil" class="foto-perfil">
+            <h1>Liliana Lucas Barbieri</h1>
+            <p class="cabecalho-sub-titulo">Desenvolvedora Front End</p>
+    </main>
+         
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Olá!Eu sou a Liliana, uma Desenvolvedora Front-End dedicada a criar interfaces que funcionam tão bem quanto parecem.Minha base sólida está no HTML, CSS e JavaScript, e eu os utilizo para resolver desafios de usabilidade e garantir que cada projeto seja responsivo e acessível.Atualmente, estou finalizando meu curso Técnico em Informática, o que me deu uma visão ainda mais completa do universo do desenvolvimento. Por isso, estou constantemente imersa em novos estudos, sempre de olho nas melhores práticas e ferramentas atuais, com o objetivo de entregar soluções Front-End modernas e de alto impacto.</p>
+       </div>
+    </section>
+      
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            
+            <div class="projetos-card">
+                <img src="imagens/teach%20me.png" alt="Teach Me" class="projetos-imagens">
+             <div class="caixa-textos-projetos">
+                <h3 class="info-projetos">Teach Me</h3>
+                <p class="paragrafos-projetos">É uma plataforma desenvolvida para facilitar o aprendizado e a troca de conhecimento e...</p>
+             </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="imagens/cafeteria.png" alt="Cafeteria" class="projetos-imagens">
+                <div class="caixa-textos-projetos">
+                <h3 class="info-projetos">Cafeteria</h3>
+                <p class="paragrafos-projetos">Um site de cafeteria, criado como parte dos meus estudos em HTML e CSS</p>
+            </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="imagens/site%20gardioes%20da%20galaxia.png" alt="Guardiões da Galáxia" class="projetos-imagens">
+                <div class="caixa-textos-projetos">
+                <h3 class="info-projetos">Guardiões da Galáxia</h3>
+                <p class="paragrafos-projetos">Descrição do projeto Guardiões da Galáxia...</p>
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+              <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+               <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="5"  id="mensagem" ></textarea>
+            
+            <div>
+               <button type="submit" class="botao-form">Enviar WhatssApp</button>
+            </div>
+        </form>
+    </section>
+    
+    <script>
+          function enviarWhats(event){
+            event.preventDefault();
+
+          const nome = document.getElementById('nome').value;
+          const mensagem = document.getElementById('mensagem').value;
+          const telefone = '5555981696826'
+          const texto = `Olá! Me chamo ${nome}. ${mensagem}`
+          const msgFormatada = encodeURIComponent(texto)
+
+          const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+          console.log(url)
+          
+
+          window.open(url, '_blank')
+          }
+     </script>
+
+</body>
+</html>
